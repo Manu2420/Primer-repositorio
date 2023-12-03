@@ -1,0 +1,68 @@
+git version : permite ver la versión que estamos utilazando de git.
+            gi version 
+            git version 2.43.0.windows.1
+
+git help    : Muestra una lista de comandos comunes de git, que se usan
+             en diversas situaciones.
+
+git cls     : limpia la consola y/o terminal.
+
+git init    : Inicializa un nuevo repositorio de Git. Este es el primer 
+            comando que debes aprender. Puede utilizarse para convertir 
+            un proyecto existente y sin versión en un repositorio de Git,
+            o para inicializar un nuevo repositorio vacío. La mayoría de
+            los demás comandos de Git no se encuentran disponibles 
+            fuera de un repositorio inicializado, por lo que este suele 
+            ser el primer comando que se ejecuta en un proyecto nuevo.
+            Al ejecutar git init, se crea un subdirectorio de .git en el
+            directorio de trabajo actual, que contiene todos los 
+            metadatos de Git necesarios para el nuevo repositorio. Estos 
+            metadatos incluyen subdirectorios de objetos, referencias y 
+            archivos de plantilla. También se genera un archivo HEAD que 
+            apunta a la confirmación actualmente extraída.
+            Solo se ejecuta una sola vez por proyecto.
+
+git status  : Muestra el estado del directorio en el que estás trabajando 
+            y la instantánea preparada. 
+            Usualmente se utiliza con la bandera -s, esto mostrara los archivos que tenemos 
+            en la carpeta en la cual estamos trabajando.
+
+git add     : El comando git add añade un cambio del directorio de 
+            trabajo en el entorno de ensayo. De este modo, indica a Git 
+            que quieres incluir actualizaciones en un archivo concreto en 
+            la próxima confirmación. Sin embargo, git add no afecta al 
+            repositorio de manera significativa: en realidad, los cambios 
+            no se registran hasta que ejecutas git commit.
+            Para añadir todos los archivos al mismo tiempo se utiliza:
+            git add . (siempre se debe incluir un espacio después de add y al final un punto).
+            También se puede utilizar git add, para añadir uno o varios
+            archivos a la vez: git add nombrearchivo1 nombrearchivo2
+
+git commit  : El comando git commit captura una instantánea de los 
+            cambios preparados en ese momento del proyecto. Las instantáneas confirmadas pueden considerarse como versiones "seguras" de un proyecto: Git no las cambiará nunca a no ser que se lo pidas expresamente. Antes de ejecutar git commit, se utiliza el comando git add para pasar o "preparar" los cambios en el proyecto que se almacenarán en una confirmación. Estos dos comandos, git commit y git add, son dos de los que se utilizan más frecuentemente.
+            git commit utiliza la bandera -m: Un comando de atajo que crea inmediatamente una confirmación con un mensaje de confirmación usado. De manera predeterminada, git commit abrirá el editor de texto configurado localmente y solicitará que se introduzca un mensaje de confirmación. Si se usa la opción -m, se omitirá la solicitud de editor de texto a favor de un mensaje insertado.
+
+git log     : El comando git log muestra las instantáneas confirmadas. Te 
+            permite ver el historial del proyecto, filtrarlo y buscar cambios concretos. Mientras que git status te permite examinar el directorio de trabajo y el entorno de ensayo, git log solo muestra el historial confirmado.
+            Es muy útil lanzar el log en una sola línea, lo que permite que veamos más cantidad de commits en la pantalla y facilita mucho seguir la secuencia, en vez de tener que ver un montón de páginas de commits. Para ello usamos git log con la bandera
+            --oneline.
+
+git config  : El comando git config es una función útil que sirve para 
+            definir valores de configuración de Git a nivel de un proyecto global o local. Estos niveles de configuración se corresponden con archivos de texto .gitconfig. Al ejecutar git config, se modificará un archivo de texto de onfiguración.
+            El caso práctico más básico de git config es invocarlo con un nombre de configuración, que mostrará el valor definido con ese nombre.
+            git config --global user.name "nombeusuario" : configura el nombre del usuario del equipo.
+            git config --global user.email "tuemail@ejemplo.cl" : configura el email del usuario del equipo en el cual se esta trabajando.
+            La bandera --global: La configuración de nivel global es específica del usuario, lo que significa que se aplica al usuario de un sistema operativo. Los valores de configuración globales se almacenan en un archivo que se encuentra en el directorio principal de un usuario. C:\Usuarios\\.gitconfig en Windows.
+
+git push    : El comando git push se usa para cargar contenido del repositorio local a un repositorio remoto. El envío es la forma de transferir confirmaciones desde tu repositorio local a un 
+            repositorio remoto. Es el equivalente a git fetch, pero mientras que al recuperar se importan las confirmaciones a ramas locales, al enviar estas se exportan a ramas remotas. Las ramas remotas se configuran mediante el comando git remote. Los envíos pueden sobrescribir los cambios, por lo que se debe tener cuidado a la hora de realizarlos.
+
+git clone   : Git clone es un comando para descargarte el código fuente existente desde un repositorio remoto (como Github, por ejemplo). En otras palabras, Git clone básicamente realiza una 
+            copia idéntica de la última versión de un proyecto en un repositorio y la guarda en tu ordenador. Ejemplo : git clone <https://link-con-nombre-del-repositorio>
+
+
+
+
+
+
+

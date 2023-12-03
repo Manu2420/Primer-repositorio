@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & Github</title>
+</head>
+<body>
+    <h1>Git & Github</h1>
+    <h2>¿Qué es Git?</h2>
+    <p>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. Su propósito es llevar registro de los cambios en archivos de computadora incluyendo coordinar el trabajo que varias personas realizan sobre archivos compartidos en un repositorio de código.</p>
+    <p>Al principio, Git se pensó como un motor de bajo nivel sobre el cual otros pudieran escribir la interfaz de usuario o front end como Cogito o StGIT. Sin embargo, Git se ha convertido desde entonces en un sistema de control de versiones con funcionalidad plena. Hay algunos proyectos de mucha relevancia que ya usan Git, en particular, el grupo de programación del núcleo Linux.</p>
+
+    <h2>¿Para que usar Git?</h2>
+    <ul>
+        <li>Permite regresar a versiones anteriores de forma sencilla y rápida.</li>
+        <li>Facilita el trabajo colaborativo.</li>
+        <li>Permite respaldar tus proyectos en la nube (ej. en Github).</li>
+        <li>Reduce considerablemente los tiempos de deploy</li>
+        <li>Las "branches" o ramas, permiten trabajar con una base de código paralela al proyecto en sí.</li>
+    </ul>
+
+    <h3>Flujo de trabajo de Git</h3>
+    <img src="/img/Flujo de trabajo de Git.jpg" alt="Flujo de trabajo de Git">
+    <p>Los proyectos vinculados a Git, serán un repositorio.</p>
+    <p>Tenemos nuestro directorio local (una carpeta en nuestro pc) con muchos archivos, Git nos irá registrando los cambios de archivos o códigos cuando nosotros le indiquemos, así podremos viajar en el tiempo retrocediendo cambios o restaurando versiones de código, ya sea en Local o de forma Remota (servidor externo). En la práctica quedará más claro.</p>
+
+    <h2>¿Qué es GitHub?</h2>
+    <p>Es una plataforma de desarrollo colaborativo que aloja proyectos en la nube utilizando el sistema de control de versiones llamado Git. Ayuda a los desarrolladores a almacenar y administrar el código llevando un registro de cambios. Generalmente el código es abierto, lo que permite realizar proyectos compartidos y mantener el seguimiento detallado de su progreso. Además cuenta con una herramienta muy útil que es GitHub Pages donde podemos publicar nuestros proyectos estáticos (HTML, CSS y JS) gratis.</p>
+
+    <h2>Comandos básicos de Git</h2>
+    <p>Aprenderemos los primeros comandos de git, todos los comandos que veremos a contunuación, tienen que ejecutarse en la terminal (ejemplo: terminal de VSCode).</p>
+
+    <h3>Versión de git</h3>
+    <p>Para ver que versión de git estamos utilizando, agregamos el siguiente comando:</p>
+    <p>git version</p>
+
+    <h3>Ayuda para ver los comandos</h3>
+    <p>git help</p>
+    <p>Muestra una lista de comandos comunes de git, que se usan en diversas situaciones.</p>
+
+    <h3>Limpiar la consola</h3>
+    <p>Cuando tenemos mucho código en la terminal, podemos limpiarla con el siguiente comando:</p>
+    <p>cls</p>
+
+    <h3>Primer repositorio</h3>
+    <p>Para crear un nuevo repositorio, crear la carpeta oculta .git .</p>
+    <p>git init</p>
+    <p>Inicializa un nuevo repositorio de Git. Este es el primer comando que debes aprender. Puede utilizarse para convertir un proyecto existente y sin versión en un repositorio de Git, o para inicializar un nuevo repositorio vacío.</p>
+    <p>La mayoría de los demás comandos de Git no se encuentran disponibles fuera de un repositorio inicializado, por lo que este suele ser <b>el primer comando que se ejecuta en un proyecto nuevo</b>. Al ejecutar git init, se crea un subdirectorio de .git en el directorio de trabajo actual, que contiene todos los metadatos de Git necesarios para el nuevo repositorio. Estos metadatos incluyen subdirectorios de objetos, referencias y archivos de plantilla. También se genera un archivo HEAD que apunta a la confirmación actualmente extraída. <strong>Solo se ejecuta una sola vez por proyecto</strong>.</p>
+
+    <h3>Ver que archivos no han sido registrados</h3>
+    <p>git status</p>
+    <p>Muestra el estado del directorio en el que estás trabajando y la instantánea preparada. </p>
+    <p>Usualmente se utiliza con la bandera <b>-s</b>, esto mostrara los archivos que tenemos en la carpeta en la cual estamos trabajando.</p>
+    <p>git status -s</p>
+
+    <h3>Añadir archivos</h3>
+    <p>El comando git add añade un cambio del directorio de trabajo en el entorno de ensayo. De este modo, indica a Git que quieres incluir actualizaciones en un archivo concreto en la próxima confirmación. Sin embargo, git add no afecta al repositorio de manera significativa: en realidad, los cambios no se registran hasta que ejecutas git commit.</p>
+    <p>Para añadir todos los archivos al mismo tiempo se utiliza:</p>
+    <p>git add .</p>
+    <p>Siempre se debe incluir un espacio después de add y al final un punto.</p>
+    <p>También se puede utilizar add para añadir, uno o varios archivos a la vez.</p>
+    <p>git add nombrearchivo1.txt nombrearchivo2.txt</p>
+
+    <h3>commit o comprometerse</h3>
+    <p>git commit</p>
+    <p>El comando git commit captura una instantánea de los cambios preparados en ese momento del proyecto. Las instantáneas confirmadas pueden considerarse como versiones "seguras" de un proyecto: Git no las cambiará nunca a no ser que se lo pidas expresamente. Antes de ejecutar git commit, se utiliza el comando git add para pasar o "preparar" los cambios en el proyecto que se almacenarán en una confirmación. Estos dos comandos, git commit y git add, son dos de los que se utilizan más frecuentemente. </p>
+    <p>git commit utiliza la bandera <b>-m</b>. Un comando de atajo que crea inmediatamente una confirmación con un mensaje de confirmación usado. De manera predeterminada, git commit abrirá el editor de texto configurado localmente y solicitará que se introduzca un mensaje de confirmación. Si se usa la opción -m, se omitirá la solicitud de editor de texto a favor de un mensaje insertado.</p>
+    <p>git commit -m</p>
+
+    <h3>Mostar las listas de commit</h3>
+    <p>git log</p>
+    <p>El comando git log muestra las instantáneas confirmadas. Te permite ver el historial del proyecto, filtrarlo y buscar cambios concretos. Mientras que git status te permite examinar el directorio de trabajo y el entorno de ensayo, git log solo muestra el historial confirmado.</p>
+    <p>Es muy útil lanzar el log en una sola línea, lo que permite que veamos más cantidad de commits en la pantalla y facilita mucho seguir la secuencia, en vez de tener que ver un montón de páginas de commits. Para ello usamos:</p>
+    <p>git log --oneline</p>
+
+    <h2>Crear repositorio</h2>
+    <p>Para crear un repositorio en GitHub, nos tenemos que ubicar en la imagen del signo + que nos aparece en GitHub y luego seleccionar New repository.</p>
+    <img src="/img/New repository.png" alt="New repository">
+    <p>Luego, tenemos que asignar un nombre al repositorio (tratar de no dejar espacios en el nombre), elegimos si será Publico o Privado y luego presionamos Create repository.</p>
+    <img src="/img/Name new repository.png" alt="Name new repository">
+    <p>A continuación, elegimos <b>or push an existing repository from the command line</b> (o enviar un repositorio existente desde la línea de commando), y copiamos las líneas de comando que nos aparecen, una por una, algo muy importante es <b>cambiar el main por master</b> si es necesario.</p>
+    <img src="/img/New repository push.png" alt="New repository">
+    <p>Al ejecutar estas líneas de comando te pedirá el usuario y contraseña de tu cuenta de github.</p>
+
+    <h3>Ver los repositorios remotos</h3>
+    <p>git remote te permite ver todos los repositorios remotos. El siguiente comando listará todas las conexiones junto con sus URLs:</p>
+    <p>git remote -v</p>
+
+    <h3>Cargar contenido</h3>
+    <p>git push</p>
+    <p>El comando git push se usa para cargar contenido del repositorio local a un repositorio remoto. El envío es la forma de transferir confirmaciones desde tu repositorio local a un repositorio remoto. Es el equivalente a git fetch, pero mientras que al recuperar se importan las confirmaciones a ramas locales, al enviar estas se exportan a ramas remotas. Las ramas remotas se configuran mediante el comando git remote. Los envíos pueden sobrescribir los cambios, por lo que se debe tener cuidado a la hora de realizarlos.</p>
+
+    <p>Después de hacer todo esto, para futuros cambios y subir los registros a GitHub debemos ejecutar los siguientes comandos en el orden en que se indican:</p>
+
+    <p>git add <br> git commit -m "mensaje" <br> git push</p>
+
+    <h3>Configuración de Git a nivel de un proyecto global o local</h3>
+    <p>git config</p>
+    <p>El comando git config es una función útil que sirve para definir valores de configuración de Git a nivel de un proyecto global o local. Estos niveles de configuración se corresponden con archivos de texto .gitconfig. Al ejecutar git config, se modificará un archivo de texto de onfiguración.</p>
+    <p>El caso práctico más básico de git config es invocarlo con un nombre de configuración y un email, que mostrará el valor definido con ese nombre y con ese email.
+    <p>git config --global user.name "nombeusuario" : configura el nombre del usuario del equipo. <br> git config --global user.email "tuemail@ejemplo.cl" : configura el email del usuario del equipo en el cual se esta trabajando.</p>
+    <p>Para el email, es recomendable utilizar el email de GitHub.</p>
+    <p>La bandera --global: La configuración de nivel global es específica del usuario, lo que significa que se aplica al usuario de un sistema operativo. Los valores de configuración globales se almacenan en un archivo que se encuentra en el directorio principal de un usuario. C:\Usuarios\\.gitconfig en Windows.</p>
+        
+    <h3>Clonar repositorio</h3>
+    <p>git clone</p>
+    <p>git clone es un comando para descargarte el código fuente existente desde un repositorio remoto (como Github, por ejemplo). En otras palabras, Git clone básicamente realiza una copia idéntica de la última versión de un proyecto en un repositorio y la guarda en tu ordenador. Ejemplo : <br> git clone &lt;https://link-con-nombre-del-repositorio&gt;</p>
+    <img src="/img/clone.png" alt="Clonar repositorio">
+    <img src="/img/git clone.png" alt="Clonar repositorio">
+
+    <h3>Github Pages</h3>
+    <p>GitHub Pages es un servicio de alojamiento u hospedaje web gratuito de GitHub. Este servicio nos permite alojar páginas web estáticas.</p>
+    <p>Cabe señalar que las páginas estáticas son, en su mayoría de información haciendo uso de HTML, CSS y Javascript. Es decir, las páginas web dinámicas que tengan los lenguajes de programación (PHP, Java, Python, entre otros) y bases de datos (MySql, Sql Server, MongoDb, etc.), no se ejecutaran.</p>
+    <p>Se debes tener en cuenta que necesitas tener tu repositorio ya creado en tu perfil de GitHub y como Publico no como Privado. Si se tiene el repositorio como privado, no se podrá utilizar giuthub pages ya que github solo permite usar pages solo con repositorios públicos.</p>
+
+
+
+
+</body>
+</html>
