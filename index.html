@@ -136,5 +136,16 @@
     <img src="./img/gitignore.png" alt=".gitignore">
 
     <h2>git checkout</h2>
+    <p>Se puede decir que git checkout trabaja de la mano con git log. Git log, lo utilizamos para ver el historial del proyecto y ver los ID de cada commit que hemos hecho. Esos ID los podemos utilizar para viajar en el tiempo y retroceder (solo retroceder), para revisar lo que hemos hecho en el commit seleccionado. Supongamos que tenemos el siguiente historial de un proyecto:</p>
+    <p> 767a088 (HEAD -> master) Cuarto commit <br>
+        4ad42d7 (origin/master) Tercer commit <br>
+        708057b Segundo commit <br>
+        d0079b9 Primer commit
+    </p>
+    <p>Ahora, queremos viajar al Segundo commit, para viajar al Segundo commit utilizaremos el ID de ese commit, es decir utilizamos 708057b, y ¿cómo lo utilizamos? Para ello tenemos git checkout.</p>
+    <p>git checkout 708057b</p>
+    <p>Con este comando viajamos al segundo commit y el editor de texto (VSCode) nos mostrara los archivos, carpetas etc.… que hayamos tenido creados al momento de hacer ese commit.</p>
+    <p>Muy importante, recordemos que esto solo nos sirve para REVISAR, NO para hacer cambios, solo revisar y ver lo que se hizo en ese commit.</p>
+    <p>Si hacemos un git log –oneline, veremos que en la línea y/o rama, no nos aparece Master (HEAD -> master), solo aparecerá HEAD, esto ocurre porque hemos utilizado checkout para viajar y retroceder, pero solo en el HEAD, no hemos movido el Master y por lo tanto no es recomendable hacer cambios en esta parte, ya que no estamos afectando el Master, solo estamos revisando.</p>
 </body>
 </html>
